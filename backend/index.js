@@ -3,6 +3,8 @@ const cors = require("cors");
 
 const app = express();
 
+const products = require("./Products");
+
 app.use(express.json());
 app.use(cors());
 
@@ -11,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/products", (req, res) => {
-  res.send([2, 3, 4, 5, 6]);
+  res.send(products);
 });
 
 const port = process.env.PORT || 5000;
